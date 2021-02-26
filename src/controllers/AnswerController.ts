@@ -1,6 +1,6 @@
 import { Request, Response } from "express";
 import { getCustomRepository, RepositoryNotTreeError } from "typeorm";
-import { SurveyUsersRepository } from "../repositories/SurveysUsersRepository";
+import { SurveysUsersRepository } from "../repositories/SurveysUsersRepository";
 
 
 class AnswerController {
@@ -9,7 +9,7 @@ class AnswerController {
         const { value } = request.params;
         const { u } = request.query;
 
-        const surveysUsersRepository = getCustomRepository(SurveyUsersRepository);
+        const surveysUsersRepository = getCustomRepository(SurveysUsersRepository);
 
         const surveyUser = await surveysUsersRepository.findOne({
             id: String(u)
